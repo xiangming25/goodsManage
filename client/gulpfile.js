@@ -27,7 +27,7 @@ var modulesPath = 'modules/',
 	htmlDestPath = 'public/modules';
 
 gulp.task('default',function(){
-	runSequence(['images','ejs','css','scripts','jsLint','components','vendor','watch','json_datas']);
+	runSequence(['images','ejs','css','scripts','jsLint','components','vendor','watch','json_datas','icon_fonts']);
 });
 
 /**
@@ -42,6 +42,16 @@ gulp.task('images',function(){
 			use:[pngquant()]
 		}))
 		.pipe(gulp.dest('public/assets/images'));
+});
+
+/**
+ * package fonts
+ * @param  {[type]} ){	gulp.src('images*')		.pipe(gulp.dest('public/assets/images'));} [description]
+ * @return {[type]}                                                                      [description]
+ */
+gulp.task('icon_fonts',function(){
+	return gulp.src('icon_fonts/**/*')
+		.pipe(gulp.dest('public/icon_fonts'));
 });
 
 /**
