@@ -27,7 +27,7 @@ var modulesPath = 'modules/',
 	htmlDestPath = 'public/modules';
 
 gulp.task('default',function(){
-	runSequence(['ejs','css','scripts','jsLint','components','vendor','watch','json_datas']);
+	runSequence(['images','ejs','css','scripts','jsLint','components','vendor','watch','json_datas']);
 });
 
 /**
