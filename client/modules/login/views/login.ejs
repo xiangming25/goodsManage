@@ -1,0 +1,33 @@
+<!-- 登录页面 -->
+<% include ../common/header.tpl.ejs %>
+<style type="text/css">
+	.login-img{
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+</style>
+<div class="signin">
+	<div class="login-content">
+		<img src="/assets/images/login_logo.png" alt="" class="login-img">
+		<div class="input-wrap input-content">
+			<div class="input-line">
+				<i class="icon-user-tie font-18"></i>
+				<input type="text" placeholder="请输入用户名">
+			</div>
+			<div class="input-line">
+				<i class="icon-lock font-18"></i>
+				<input type="password" placeholder="请输入密码">
+			</div>
+			<div class="input-line">
+				<i class="icon-key font-18"></i>
+				<input type="text" placeholder="请输入验证码" />
+				<img src="/assets/images/verify_code.png" alt="" class="security-img" />
+			</div>
+			<p class="error-warn font-14">检验验证是否正确</p>
+			<div class="submit-btn">登&nbsp;&nbsp;录</div>
+		</div>
+		
+	</div>
+</div>
+<% include ../common/footer.tpl.ejs %>
