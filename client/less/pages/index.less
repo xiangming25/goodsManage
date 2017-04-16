@@ -1,0 +1,119 @@
+.index{
+	width:100%;
+	height:100%;
+	position: relative;;
+	.index-logo-img{
+		width: 50px;
+	}
+	.company-img{
+		float: left;
+		height: 70px;
+		margin-left: 20px;
+		&:before{
+			content:"";
+			width: 0;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		img,span{
+			display: inline-block;
+			vertical-align: middle;
+			 
+		}
+		.span-line{
+			height: 40px;
+			width: 1px;
+			background-color: gray;
+			margin:0 20px;
+			
+		}
+	}
+	.user-mess{
+		float: right;
+		height: 70px;
+		line-height: 70px;
+		span{
+			color:rgb(54,54,54);
+			margin:0 10px;
+			cursor: pointer;
+		}
+	}
+	
+
+}
+.common-top{
+	height: 70px;
+	width:100%;
+	background-color:rgb(255,255,255);
+	border-bottom: 1px solid rgb(196,200,202);
+
+}
+.common-bottom{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	.common-left{
+		width:150px;
+		height: 100%;
+		margin-top: 70px;
+		position: absolute;
+		top:0;
+		left: 0;
+		.left-list{
+			width:150px;
+			height:100%;
+			background-color: rgb(37,45,58);
+			li{
+				height: 50px;
+				width:100%;
+				padding-left: 10px;
+				background-color: rgb(37,45,58);
+				color: rgb(145,157,178);
+				a{
+					display: inline-block;
+					height: 50px;
+					line-height: 50px;
+					margin-left: 10px;
+					color: rgb(145,157,178);
+				}
+				&:hover{
+					color:rgb(255,255,255);
+					background-color: rgb(56,71,97);
+					a{
+						color: rgb(255,255,255);
+					}
+				}
+			}
+		}
+	}
+	.common-right{
+		position: absolute;
+		width:100%;
+		height: 100%;
+		top:0;
+		left:0;
+		padding-top: 70px;
+		padding-left: 160px;
+		p{
+			margin:20px;
+		}
+		.goods-table{
+			border: 1px solid rgb(131,166,217);
+			width: 100%;
+			tr{
+				border-bottom: 1px solid rgb(246,247,247);
+				height: 70px;
+				td{
+					padding: 10px;
+				}
+			}
+			.goods-name{
+				background-color: rgb(246,247,247);
+			}
+		}
+	}
+}

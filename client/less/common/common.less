@@ -1,11 +1,38 @@
 *{
 	box-sizing: border-box;
+	font-family: "微软雅黑";
 }
 html,body{
 	width:100%;
 	height: 100%;
+	
+	
+}
+html,body,ul,p{
 	padding: 0;
 	margin:0;
-	font-family: "微软雅黑";
 }
+
+li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color:rgb(0,0,0);
+}
+.clear-float{
+	&:after{
+		content:"";
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+}
+.clear-float{
+	zoom:1;
+}
+
+
+
 
