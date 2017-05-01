@@ -1,8 +1,84 @@
 <% include ../common/header.tpl.ejs %>
+	<div class="index">
+		<div class="common-right">
+			<div class="right-content">
+				<!-- 上面操作部分 -->
+				<div class="manager-operate clear-float">
+					<span class="mana-name font-22">商品管理</span>
+					<div class="goods-oper-btn font-14 fr add-goods-btn"><i class="icon-plus font-12"></i>添加商品</div>
+				</div>
+				<div class="select-classify clear-float">
+					<div class="select-oper font-14 fl">
+						<span>分类选择：</span>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
+					<div class="input-query-oper fr">
+						<input type="text" placeholder="请输入要查询的内容">
+						<div class="goods-oper-btn font-14 query-btn"><i class="icon-search font-12"></i>查询</div>
+					</div>
+				</div>
+				<!--  中间表格-->
+				<table class="goods-table font-14" >
+					<thead>
+						<tr>
+							<th class="col-3">商品名字</th>
+							<th class="col-1">单位</th>
+							<th class="col-3">商品图片</th>
+							<th class="col-2">进价</th>
+							<th class="col-2">卖价</th>
+							<th class="col-2">类别</th>
+							<th class="col-2">剩余数量</th>
+							<th class="col-3">更新时间</th>
+							<th class="col-2">是否显示</th>
+							<th class="col-4">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td><img src="" alt=""></td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr> -->
+
+						
+					</tbody>
+				</table>
+				<!-- 分页按钮 -->
+				<div class="pagenation font-14">
+					<ul class="page-btn-list">
+						<li><a href="#">&lt;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">&gt;</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 
 
-
-	<h1>这里是种子文件首页, 哈哈,</h1>
+	
 
 <script type="text/javascript" src="/vendor/require.js" data-main="/assets/js/index.js"></script>
 <% include ../common/footer.tpl.ejs %>

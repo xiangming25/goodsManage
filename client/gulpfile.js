@@ -95,7 +95,7 @@ gulp.task('css',function(){
  */
 gulp.task('json_datas',function(){
 	return gulp.src('json_datas/**/*.json')
-	.pipe(gulp.dest('public/json_datas'));
+	.pipe(gulp.dest('public/api'));
 });
 
 
