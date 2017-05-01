@@ -7,53 +7,296 @@
 				<span class="font-18">系统管理</span>
 			</div>
 			<div class="user-mess">
-				<span class="font-18">登录</span>
-				<span class="font-18">注册</span>
+				<span class="font-14">登录</span>
+				<span class="font-14">注册</span>
 			</div>
 		</div>
-		<div class="common-bottom">
-			<div class="common-left">
-				<ul class="left-list">
-					<li><i class="icon-cog"></i><a href="#">商品管理</a></li>
-					<li><i class="icon-cog"></i><a href="#">进货管理</a></li>
-					<li><i class="icon-cog"></i><a href="#">月末盘点表</a></li>
-					<li><i class="icon-cog"></i><a href="#">统计管理</a></li>
-					<li><i class="icon-cog"></i><a href="#">个人管理</a></li>
-				</ul>
-			</div>
-			<div class="common-right">
-				<p class="mana-name font-24">商品管理</p>
-				<div class="select-classify">
-					
+		<div class="common-left">
+			<ul class="left-list font-14">
+				<li class="active"><i class="icon-cog"></i><a href="#">商品管理</a></li>
+				<li><i class="icon-cog"></i><a href="#">进货管理</a></li>
+				<li><i class="icon-cog"></i><a href="#">月末盘点表</a></li>
+				<li><i class="icon-cog"></i><a href="#">统计管理</a></li>
+				<li><i class="icon-cog"></i><a href="#">个人管理</a></li>
+			</ul>
+		</div>
+		<div class="common-right">
+			<div class="right-content">
+				<!-- 上面操作部分 -->
+				<div class="manager-operate clear-float">
+					<span class="mana-name font-22">商品管理</span>
+					<div class="goods-oper-btn font-14 fr"><i class="icon-plus font-12"></i>添加商品</div>
 				</div>
-				<table class="goods-table">
-					<tr>
-						<td class="goods-name">商品名字</td>
-						<td>单位</td>
-						<td>商品图片</td>
-						<td>进价</td>
-						<td>卖价</td>
-						<td>类别</td>
-						<td>剩余数量</td>
-						<td>更新时间</td>
-						<td>是否显示</td>
-						<td>操作</td>
-					</tr>
-					<tr>
-						<td class="goods-name">商品名字</td>
-						<td>单位</td>
-						<td>商品图片</td>
-						<td>进价</td>
-						<td>卖价</td>
-						<td>类别</td>
-						<td>剩余数量</td>
-						<td>更新时间</td>
-						<td>是否显示</td>
-						<td>操作</td>
-					</tr>
+				<div class="select-classify clear-float">
+					<div class="select-oper font-14 fl">
+						<span>分类选择：</span>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
+					<div class="input-query-oper fr">
+						<input type="text" placeholder="请输入要查询的内容">
+						<div class="goods-oper-btn font-14 query-btn"><i class="icon-search font-12"></i>查询</div>
+					</div>
+				</div>
+				<!--  中间表格-->
+				<table class="goods-table font-14" >
+					<thead>
+						<tr>
+							<th class="col-3">商品名字</th>
+							<th class="col-1">单位</th>
+							<th class="col-3">商品图片</th>
+							<th class="col-2">进价</th>
+							<th class="col-2">卖价</th>
+							<th class="col-2">类别</th>
+							<th class="col-2">剩余数量</th>
+							<th class="col-3">更新时间</th>
+							<th class="col-2">是否显示</th>
+							<th class="col-4">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>脉动</td>
+							<td>瓶</td>
+							<td>商品图片</td>
+							<td>￥2.4</td>
+							<td>￥4.0</td>
+							<td>饮料</td>
+							<td>11</td>
+							<td>2017-01-24</td>
+							<td>是</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+					</tbody>
 				</table>
+				<!-- 分页按钮 -->
+				<div class="pagenation font-14">
+					<ul class="page-btn-list">
+						<li><a href="#">&lt;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">&gt;</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
+		
 	</div>
 
 
