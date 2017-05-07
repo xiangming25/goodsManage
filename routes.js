@@ -24,6 +24,12 @@ router.get('/login',function(req,res,next){
 });
 router.get('/register',function(req,res,next){
 	res.render('register/register');
-})
+});
+router.get('/addgoods',function(req,res,next){
+	res.render('addgoods/addgoods');
+});
+router.get('/goodsDetail',function(req,res,next){
+	res.render('goodsDetail/goodsDetail');
+});
 
 module.exports = router;
