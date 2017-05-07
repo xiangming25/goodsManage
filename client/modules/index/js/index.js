@@ -23,7 +23,7 @@
 							'<td>'+item.time+'</td>'+
 							'<td>'+item.isShow+'</td>'+
 							'<td>'+
-							'	<a href="">查看</a>'+
+							'	<a href="/goodsDetail?item='+item.id+'&name='+item.name+'">查看</a>'+
 							'	<a href="">修改</a>'+
 							'	<a href="">删除</a>'+
 							'</td>'+
@@ -31,7 +31,7 @@
 						});
 						tbody.html(dataStr);
 					}
-				)
+				);
 			});
 		});
 	});

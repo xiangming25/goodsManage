@@ -1,0 +1,15 @@
+{
+	"code":10000,
+	"data":{
+		"id" : 1,
+		"name" : "雪碧",
+		"unit" : "瓶",
+		"bid" : 2.4,
+		"sellPrice" : 3,
+		"type" : "饮料",
+		"quantity" : 100,
+		"lastSurplus" : 50,
+		"currentSurplus" : 20,
+		"img":"/assets/images/login_logo.png"
+	}
+}
