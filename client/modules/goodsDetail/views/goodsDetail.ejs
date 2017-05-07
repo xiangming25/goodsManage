@@ -1,0 +1,62 @@
+<% include ../common/header.tpl.ejs%>
+	<div class="common-right">
+		<div class="right-content ">
+			<ul class="bread-list font-12 clear-float">
+				<li><a href="#">商品管理</a></li>
+				<li><a href="#">商品详情</a></li>
+				<li><a href="#">芬达</a></li>
+			</ul>
+			<div class="manager-operate clear-float">
+				<span class="font-22">商品详情</span>
+				<a class="goods-oper-btn fr font-14" onclick="history.back()"><i class="icon-reply font-12"></i>返回上一页</a>
+			</div>
+			<div class="goods-detail-content font-14">
+				<table class="goods-detail-table">
+					<tr>
+						<td>商品名称:</td>
+						<td id="goodsName"></td>
+						<td colspan="2" rowspan="10" class="goods-detail-img"><img src="" id="goodsImg" alt=""></td>
+					</tr> 
+					<tr>
+						<td>类别:</td>
+						<td id="goodsType"></td>
+					</tr>
+					<tr>
+						<td>单位:</td>
+						<td id="goodsUnit"></td>
+					</tr>
+					<tr>
+						<td>进货数量:</td>
+						<td id="goodsQuantity">20</td>
+					</tr>
+					<tr>
+						<td>进货单价(元):</td>
+						<td id="goodsBid">2.5</td>
+					</tr>
+					<tr>
+						<td>卖价(元):</td>
+						<td id="goodsPrice">3</td>
+					</tr>
+					<tr>
+						<td>销售量:</td>
+						<td id="goodsSellNum">20</td>
+					</tr>
+					<tr>
+						<td>上月剩余量:</td>
+						<td id="lastSurplus">20</td>
+					</tr>
+					<tr>
+						<td>本月剩余量:</td>
+						<td id="currentSurplus">10</td>
+					</tr>
+					<tr>
+						<td>净赚/元:</td>
+						<td id="netPrice">10</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="vendor/require.js" data-main="/assets/js/goodsDetail.js"></script>
+<% include ../common/footer.tpl.ejs%>
