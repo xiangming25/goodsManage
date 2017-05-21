@@ -10,7 +10,8 @@ router.get('/test', function(req, res, next) {
   res.send('test!');
 });
 
-router.get('/user', function(req, res, next) {
+//商品管理
+router.get('/index', function(req, res, next) {
   res.render('index/index');
 });
 /*router.get('/test', function(req, res, next) {
@@ -30,6 +31,10 @@ router.get('/addgoods',function(req,res,next){
 });
 router.get('/goodsDetail',function(req,res,next){
 	res.render('goodsDetail/goodsDetail');
+});
+
+router.get('/purchaseManager',function(req,res,next){
+	res.render('purchaseManager/purchaseManager');
 });
 
 module.exports = router;
