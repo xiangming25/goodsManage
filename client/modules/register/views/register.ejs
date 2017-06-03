@@ -1,22 +1,27 @@
 <% include ../common/header.tpl.ejs %>
 	<div class="register">
 		<div class="register-content">
-			<img src="assets/images/login_logo.png" alt="">
+			<img src="/assets/images/login_logo.png" alt="">
 			<div class="input-content input-wrap">
 				<div class="input-line">
 					<i class="icon-user-tie font-18"></i>
-					<input type="text" placeholder="请输入用户名">
+					<input type="text" placeholder="请输入用户名" id="username" />
 				</div>
 				<div class="input-line">
 					<i class="icon-lock font-18"></i>
-					<input type="password" placeholder="请输入密码">
+					<input type="password" placeholder="请输入密码" id="password">
+				</div>
+				<div class="input-line">
+					<i class="icon-lock font-18"></i>
+					<input type="password" placeholder="请再次输入密码" id="passwordEnsure">
 				</div>
 				<div class="input-line">
 					<i class="icon-phone font-18"></i>
-					<input type="text" placeholder="请输入电话号码">
+					<input type="text" placeholder="请输入电话号码" id="telphone">
 				</div>
-				<div class="submit-btn"> 注 册</div>
+				<div class="submit-btn" id="submitBtn"> 注 册</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="/vendor/require.js" data-main="/assets/js/register.js"></script>
 <% include ../common/footer.tpl.ejs %>

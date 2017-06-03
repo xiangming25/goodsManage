@@ -1,7 +1,8 @@
 var express = require('express'),
 	app = express(),
 	path = require('path'),
-	ejs = require('ejs');
+	ejs = require('ejs'),
+	bodyParser = require('body-parser');
 
 // 视图访问路径
 app.set('views', path.join(__dirname, 'client/public/modules/'));
@@ -10,10 +11,14 @@ app.set('view engine', 'ejs');
 
 // 静态资源访问路径
 app.use(express.static(path.join(__dirname,'client/public/')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // 路由配置
 var routers = require('./routes');
+var user = require('./routes/user');
 app.use('/',routers);
+app.use('/user',user);
 
 
 // 处理404 以及 一些其他的异常处理
