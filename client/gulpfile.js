@@ -191,7 +191,7 @@ gulp.task('watch',function(){
 	});*/
 	browserSync.init({
         proxy   : "127.0.0.1:3000/index",
-        port    : 80
+        port    : 8080
     });
 
 	gulp.watch([modulesPath+'/**/*.ejs'],['ejs']);

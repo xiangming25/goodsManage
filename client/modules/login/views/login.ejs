@@ -13,11 +13,11 @@
 		<div class="input-wrap input-content">
 			<div class="input-line">
 				<i class="icon-user-tie font-18"></i>
-				<input type="text" placeholder="请输入用户名">
+				<input type="text" placeholder="请输入用户名" id="username">
 			</div>
 			<div class="input-line">
 				<i class="icon-lock font-18"></i>
-				<input type="password" placeholder="请输入密码">
+				<input type="password" placeholder="请输入密码" id="password">
 			</div>
 			<div class="input-line">
 				<i class="icon-key font-18"></i>
@@ -25,9 +25,11 @@
 				<img src="/assets/images/verify_code.png" alt="" class="security-img" />
 			</div>
 			<p class="error-warn font-14">检验验证是否正确</p>
-			<div class="submit-btn">登&nbsp;&nbsp;录</div>
+			<div class="submit-btn" id="submitBtn">登&nbsp;&nbsp;录</div>
+			<div class="" id="getInfo">获取</div>
 		</div>
-		
+
 	</div>
 </div>
+<script type="text/javascript" src="/vendor/require.js" data-main="/assets/js/login.js"></script>
 <% include ../common/footer.tpl.ejs %>

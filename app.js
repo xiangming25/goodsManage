@@ -2,17 +2,25 @@ var express = require('express'),
 	app = express(),
 	path = require('path'),
 	ejs = require('ejs'),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	jwt = require('jsonwebtoken');
 
 // 视图访问路径
 app.set('views', path.join(__dirname, 'client/public/modules/'));
 app.set('view engine', 'ejs');
 
+// 头部需要的内容
+app.use(function(req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+	next();
+});
 
 // 静态资源访问路径
 app.use(express.static(path.join(__dirname,'client/public/')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // 路由配置
 var routers = require('./routes');

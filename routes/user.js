@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var checkToken = require('./checkToken');
 
 var userDao = require('../dao/userDao');
 
@@ -23,5 +24,11 @@ router.get('/register',function(req,res,next){
 router.post('/addUser', function(req, res, next) {
   userDao.add(req, res, next);
 });
+
+router.post('/check', function(req, res, next) {
+	userDao.queryByName(req,res, next);
+});
+
+router.get('/all', checkToken, userDao.queryAll);
 
 module.exports = router;
