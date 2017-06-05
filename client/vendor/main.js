@@ -7,7 +7,10 @@
 		baseUrl : '/assets/js',
 		paths : {
 			'jquery' : '/vendor/jquery',
-			'default' : '/components/default'
+			'default' : '/components/default',
+			'network' : '/components/network',
+			'errorCode' : '/components/errorCode',
+			'errorCodeRev' : '/components/errorCodeRev'
 		}
 	});
 })();

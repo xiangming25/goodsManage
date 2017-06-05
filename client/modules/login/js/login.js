@@ -1,6 +1,6 @@
 ;(function() {
   require(['/vendor/main.js'], function() {
-    require(['jquery'], function($) {
+    require(['jquery', 'network'], function($, network) {
       $('#submitBtn').on('click', submit);
       $('#getInfo').on('click',testGetInfo);
 
@@ -13,24 +13,23 @@
           name: username,
           password: password,
         };
-        console.log('params:====',params);
-        $.post('/user/check', params,function(response) {
-          console.log('response:----',response);
-          localStorage.token = response.token;
-        });
+        var response = network('POST', '/user/check', params);
+        response.then(function(data) {
+          console.log("promise data: ---",data);
+        })
+        .catch(function(errInfos) {
+          console.log('errInfos:----',errInfos);
+        });;
       }
 
       function testGetInfo() {
-        $.ajax({
-          type: 'GET',
-          url: '/user/all',
-          beforeSend: function(xhr) {
-            xhr.setRequestHeader('token', localStorage.token);
-          },
-          success: function(data) {
-            console.log('data:-===',data);
-          }
+        var response = network('GET','/user/all');
+        response.then(function(data) {
+          console.log('getInfoData:-------------',data);
         })
+        .catch(function(err) {
+          console.log('err:----',err);
+        });
       }
     });
   });
