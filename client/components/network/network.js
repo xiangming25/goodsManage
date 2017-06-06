@@ -2,9 +2,9 @@
  * 对ajax网络请求再次封装
  */
 define(['jquery', 'errorCode', 'errorCodeRev'], function($, errorCode, errorCodeRev) {
-  var token = localStorage.token;
   // get请求
   return function interaction(method, url, data) {
+    var token = localStorage.token;
     return new Promise(function(resolve, reject) {
       if (['GET','POST','PUT','DELETE'].indexOf(method) === -1) {
         alert('请求类型错误');
@@ -18,10 +18,11 @@ define(['jquery', 'errorCode', 'errorCodeRev'], function($, errorCode, errorCode
           url: url,
           data: data,
           beforeSend: function(xhr) {
-            xhr.setRequestHeader('token', token);
+            if (token) xhr.setRequestHeader('token', token);
           },
           success: function(response) {
             if (response.code === errorCode.SUCCESS) {
+              if (response.token) localStorage.token = response.token;
               resolve(response.data);
             } else {
               reject(response.code);

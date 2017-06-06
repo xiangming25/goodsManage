@@ -4,8 +4,12 @@ var tokenConfig = require('../config/token');
 
 module.exports = function(req, res, next) {
   //检查post的信息或者url查询参数或者头信息
-  var token = req.body.token || req.query.token || req.headers['token'];
-  if (token) {
+  var token = (req.body && req.body.token) || (req.query && req.query.token) || (req.headers['token']);
+  var baseUrl = req.baseUrl;
+  // 如果是登录页面，跳过
+  if (baseUrl === '/api/signin') {
+    next();
+  } else if (token) {
     jwt.verify(token, tokenConfig.superSecret, function(err, decoded) {
       if (err) {
         if (err.message === 'jwt expired') {

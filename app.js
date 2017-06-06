@@ -3,7 +3,11 @@ var express = require('express'),
 	path = require('path'),
 	ejs = require('ejs'),
 	bodyParser = require('body-parser'),
-	jwt = require('jsonwebtoken');
+	jwt = require('jsonwebtoken'),
+	checkToken = require('./utils/checkToken'),
+	mysql = require('mysql'),
+	$util = require('./utils/util'),
+	$conf = require('./config/db');
 
 // 视图访问路径
 app.set('views', path.join(__dirname, 'client/public/modules/'));
@@ -17,16 +21,25 @@ app.use(function(req, res, next) {
 	next();
 });
 
+// 使用连接池
+var pool = mysql.createPool($util.extend({}, $conf.mysql));
+
+// 检查是否有token
+app.use('/api/*',checkToken);
+
 // 静态资源访问路径
 app.use(express.static(path.join(__dirname,'client/public/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 路由配置
+var api = require('./routes/api');
 var routers = require('./routes');
 var user = require('./routes/user');
+app.use('/api',api(pool));
 app.use('/',routers);
 app.use('/user',user);
+
 
 
 // 处理404 以及 一些其他的异常处理

@@ -13,7 +13,7 @@
           name: username,
           password: password,
         };
-        var response = network('POST', '/user/check', params);
+        var response = network('POST', '/api/signin', params);
         response.then(function(data) {
           console.log("promise data: ---",data);
         })
@@ -23,7 +23,7 @@
       }
 
       function testGetInfo() {
-        var response = network('GET','/user/all');
+        var response = network('GET','/api/userInfo');
         response.then(function(data) {
           console.log('getInfoData:-------------',data);
         })
