@@ -34,10 +34,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // 路由配置
 var api = require('./routes/api');
-var routers = require('./routes');
+var index = require('./routes/index');
 var user = require('./routes/user');
+app.use('/',index);
 app.use('/api',api(pool));
-app.use('/',routers);
 app.use('/user',user);
 
 
@@ -55,7 +55,7 @@ app.use(function(err, req,res, next){
 	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 	res.status(err.status || 500);
-	res.render('error');
+	res.render('error/error');
 });
 
 

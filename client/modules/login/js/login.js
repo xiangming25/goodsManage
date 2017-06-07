@@ -19,7 +19,7 @@
         })
         .catch(function(errInfos) {
           console.log('errInfos:----',errInfos);
-        });;
+        });
       }
 
       function testGetInfo() {
