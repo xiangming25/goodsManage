@@ -2,18 +2,7 @@ var $sql = require('./userSql');
 var jwt = require('jsonwebtoken');
 var tokenConfig = require('../config/token');
 var errorCode = require('../config/errorCode');
-
-// 向前台返回JSON方法的简单封装
-var jsonWrite = function(res, ret) {
-  if (typeof ret === 'undefined') {
-    res.json({
-      code: '1',
-      msg: '操作失败'
-    });
-  } else {
-    res.json(ret);
-  }
-}
+var jsonWrite = require('../utils/jsonWrite');
 
 module.exports = function(pool){
   return {
@@ -32,13 +21,14 @@ module.exports = function(pool){
           params.qq,
           params.wechat
         ], function(err, result) {
+          if (err) jsonWrite(err);
           if (result) {
             result = {
               code: errorCode.SUCCESS,
               msg: '增加成功'
             };
+            jsonWrite(res,result);
           }
-          jsonWrite(res,result);
           connection.release();
         });
       });

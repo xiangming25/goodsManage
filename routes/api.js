@@ -5,7 +5,7 @@ var user = require('../service/user');
 
 function api(pool) {
   router.post('/signin', user(pool).queryByName);
-  router.post('/add/user', user(pool).add);
+  router.post('/register', user(pool).add);
   router.get('/userInfo',user(pool).queryAll);
   return router;
 }
