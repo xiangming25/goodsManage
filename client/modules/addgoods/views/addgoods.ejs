@@ -4,50 +4,56 @@
 			<ul class="bread-list font-12 clear-float">
 				<li><a href="#">商品管理</a></li>
 				<li><a href="#">商品添加</a></li>
-			</ul>	
-			<div class="manager-operate">	
+			</ul>
+			<div class="manager-operate">
 				<p class="font-18 little-title">商品添加</p>
 			</div>
 			<div class="add-goods-content">
 				<div class="input-group">
 					<span class="font-16">商品名称：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="name">
 					<p class="error-tip font-14"><i class="icon-cancel-circle font-12"></i>商品名称错误提示</p>
 				</div>
 				<div class="input-group">
 					<span class="font-16">单位：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="unit">
+					<p class="correct-tip font-14"><i class="icon-checkmark font-12"></i></p>
+				</div>
+				<div class="input-group">
+					<span class="font-16">图片：</span>
+					<input type="text" placeholder="请输入图片地址" id="image">
 					<p class="correct-tip font-14"><i class="icon-checkmark font-12"></i></p>
 				</div>
 				<div class="input-group">
 					<span class="font-16">进价：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="inPrice">
 				</div>
 				<div class="input-group">
 					<span class="font-16">卖价：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="outPrice">
 				</div>
 				<div class="input-group">
 					<span class="font-16">类别：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="type">
 				</div>
 				<div class="input-group">
 					<span class="font-16">剩余数量：</span>
-					<input type="text" placeholder="请输入商品名称">
+					<input type="text" placeholder="请输入商品名称" id="remainder">
 				</div>
 				<div class="input-group">
 					<span class="font-16">是否显示：</span>
-					<input type="radio" value="是"  name="isShow" class="radio-input"><span>是</span>
-					<input type="radio" value="否" name="isShow" class="radio-input"><span>否</span>
+					<input type="radio" value="true"  name="isShow" class="radio-input" checked><span>是</span>
+					<input type="radio" value="false" name="isShow" class="radio-input"><span>否</span>
 				</div>
 				<div class="input-group">
 					<span></span>
-					<div class="font-16 add-operate">提交</div>
+					<div class="font-16 add-operate" id="submitBtn">提交</div>
 				</div>
 
-				
+
 			</div>
 		</div>
-		
+
 	</div>
+<script type="text/javascript" src="/vendor/require.js" data-main="/assets/js/addgoods.js"></script>
 <% include ../common/footer.tpl.ejs %>
