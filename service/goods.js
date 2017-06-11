@@ -7,6 +7,7 @@ var $sql = require('./goodsSql'),
 
 module.exports = function(pool) {
   return {
+    // 新增
     add: function(req, res, next) {
       pool.getConnection(function(err, connection) {
         var params = req.body;
@@ -15,33 +16,37 @@ module.exports = function(pool) {
           name: params.name,
           unit: params.unit,
           image: params.image,
-          inPrice: params.inPrice,
-          outPrice: params.outPrice,
+          inPrice: parseFloat(params.inPrice),
+          outPrice: parseFloat(params.outPrice),
           type: params.type,
-          remainder: params.remainder,
-          isShow: params.isShow,
+          remainder: parseInt(params.remainder),
+          isShow: Boolean(params.isShow) ? 1 : 0,
           userId: params.userId
         };
-        connection.query($sql.insert, params, function(err, result) {
-          if (err) return jsonWrite({code: errorCode.QUERY_ERROR, data: err});
-          if (result) return jsonWrite({code: errorCode.SUCCESS, data: result});
+        connection.query($sql.insert, newParams, function(err, result) {
+          if (err) return jsonWrite(res, {code: errorCode.QUERY_ERROR, data: err});
+
+          if (result) return jsonWrite(res, {code: errorCode.SUCCESS, data: 'success'});
           connection.release();
-        })
+        });
       });
     },
     // 分页查询数据
     queryByPage: function(req, res, next) {
       pool.getConnection(function(err, connection) {
-        var params = req.body,
+        var params = req.query,
             userId = req.userInfo.id,
-            page = params.page-1 || defaultConfig.page-1,
+            page = params.page || defaultConfig.page,
             count = params.count || defaultConfig.count;
-        connection.query($sql.queryByPage, [
+        var query = connection.query($sql.queryByPage, [
           userId,
-          page-1,
-          count
+          (page-1)*count,
+          parseInt(count)
         ], function(err, result) {
-          if (err) jsonWrite(res, {code: errorCode.QUERY_ERROR, data: err});
+          if (err) {
+            console.log('query.sql:====',query.sql);
+            jsonWrite(res, {code: errorCode.QUERY_ERROR, data: err});
+          }
           if(result) jsonWrite(res,{code: errorCode.SUCCESS, data: result});
           connection.release();
         });
