@@ -13,6 +13,7 @@ function api(pool) {
   // 商品管理
   router.post('/goods/add', goods(pool).add);
   router.get('/goods/list', goods(pool).queryByPage);
+  router.get('/goods/search', goods(pool).searchInfo);
   return router;
 }
 module.exports = api;
